@@ -1,11 +1,11 @@
-# Placeholder gallery
+# Review gallery
 
-This generated gallery proves only the deterministic data-pack mechanics and a
-single `minecraft:stone` stock control at `(176, 100, 175)`. It does not claim
-Productive Bees support.
+This bounded gallery compares the Productive Bees Feeding Slab against a stock
+oak slab and exercises its default, selected-material, top, and double forms.
+A contained honey trough supplies one source and the naturally settled flowing
+levels needed to compare BlueMap's fluid surface with the client.
 
-Replace `cases.py` with the smallest real defect fixture and stock controls,
-then keep the stable commands:
+Regenerate and validate it with:
 
 ```bash
 python gallery/generate.py
@@ -14,6 +14,5 @@ python gallery/lint.py
 bash gallery/package.sh /tmp/productivebees-gallery.zip
 ```
 
-The release gate rejects the `SCAFFOLD_NOT_IMPLEMENTED` marker in `cases.py`.
-Keep gallery generation deterministic, bounded, synthetic where practical, and
-free of candidate assets or captured meshes.
+The gallery contains no Productive Bees assets or captured meshes; all visuals
+come from the exact operator-installed mod artifact.

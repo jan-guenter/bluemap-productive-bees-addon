@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # SPDX-License-Identifier: MIT
-"""Lint the generated placeholder gallery without starting Minecraft."""
+"""Lint the generated Productive Bees gallery without starting Minecraft."""
 
 from __future__ import annotations
 
@@ -31,36 +31,48 @@ def main() -> int:
     )
     if load_tag != {"values": [f"{cases.NAMESPACE}:load"]}:
         raise ValueError("load tag differs from the exact namespace")
-    if len(cases.PLACEMENTS) != 1:
-        raise ValueError("placeholder must contain exactly one stock control")
-
-    placement = cases.PLACEMENTS[0]
-    if placement.block_state != "minecraft:stone" or placement.expected != (
-        "stock-visible"
+    if len(cases.PLACEMENTS) != 6:
+        raise ValueError("review gallery must contain exactly six anchor cases")
+    if len({placement.case_id for placement in cases.PLACEMENTS}) != 6:
+        raise ValueError("case IDs must be unique")
+    if sum("productivebees:feeder" in row.block_state for row in cases.PLACEMENTS) != 4:
+        raise ValueError("review gallery must contain four feeder forms")
+    if sum("productivebees:honey" in row.block_state for row in cases.PLACEMENTS) != 1:
+        raise ValueError("review gallery must contain one honey source")
+    if cases.PLACEMENTS[0].block_state != (
+        "minecraft:oak_slab[type=bottom,waterlogged=false]"
     ):
-        raise ValueError("placeholder must remain an honest stone stock control")
+        raise ValueError("first case must remain the stock oak-slab control")
     minimum_x, minimum_y, minimum_z, maximum_x, maximum_y, maximum_z = (
         cases.ENVELOPE
     )
-    if not (
-        minimum_x <= placement.x <= maximum_x
-        and minimum_y <= placement.y <= maximum_y
-        and minimum_z <= placement.z <= maximum_z
-    ):
-        raise ValueError("placeholder placement escaped its bounded envelope")
+    for placement in cases.PLACEMENTS:
+        if not (
+            minimum_x <= placement.x <= maximum_x
+            and minimum_y <= placement.y <= maximum_y
+            and minimum_z <= placement.z <= maximum_z
+        ):
+            raise ValueError(f"placement escaped its bounded envelope: {placement.case_id}")
+        if placement.nbt is not None and ("\n" in placement.nbt or "\r" in placement.nbt):
+            raise ValueError(f"NBT must stay on one command line: {placement.case_id}")
 
     function_root = ROOT / f"datapack/data/{cases.NAMESPACE}/function"
     functions = "\n".join(
         path.read_text(encoding="utf-8")
         for path in sorted(function_root.glob("*.mcfunction"))
     )
-    if len(re.findall(r"^setblock ", functions, re.MULTILINE)) != 1:
-        raise ValueError("placeholder must place exactly one block")
+    if len(re.findall(r"^setblock ", functions, re.MULTILINE)) != len(
+        cases.PLACEMENTS
+    ):
+        raise ValueError("setblock count differs from the case table")
+    expected_merges = sum(row.nbt is not None for row in cases.PLACEMENTS)
+    if len(re.findall(r"^data merge block ", functions, re.MULTILINE)) != expected_merges:
+        raise ValueError("data-merge count differs from the case table")
     lowered = functions.lower()
-    for forbidden in ("summon ", "data merge", "op ", "deop ", "stop "):
+    for forbidden in ("summon ", "op ", "deop ", "stop "):
         if forbidden in lowered:
-            raise ValueError(f"forbidden placeholder command: {forbidden}")
-    print("placeholder gallery lint passed: one bounded stock control")
+            raise ValueError(f"forbidden review command: {forbidden}")
+    print("review gallery lint passed: six bounded anchors")
     return 0
 
 

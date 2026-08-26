@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "": {
+      "model": "bluemap_productivebees:block/honey",
+      "renderer": "bluemap:liquid"
+    }
+  }
+}

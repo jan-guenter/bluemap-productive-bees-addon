@@ -2,6 +2,8 @@
 
 ## Unreleased
 
-- Generated a fail-closed Java 21 BlueMap add-on seed for `productivebees-1.21.1-13.13.5`.
-- SCAFFOLD_NOT_IMPLEMENTED: renderer implementation and visual acceptance
-  remain pending.
+- Added exact-artifact-gated Feeding Slab rendering for saved slab materials
+  and bottom, top, and double forms.
+- Added Productive Bees honey source and flow rendering through BlueMap's native
+  liquid geometry with the exact installed textures and client tint.
+- Added a bounded six-anchor feeder and honey review gallery.

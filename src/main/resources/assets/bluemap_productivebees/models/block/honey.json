@@ -1,0 +1,7 @@
+{
+  "textures": {
+    "particle": "productivebees:block/honey/still",
+    "still": "productivebees:block/honey/still",
+    "flow": "productivebees:block/honey/flow"
+  }
+}

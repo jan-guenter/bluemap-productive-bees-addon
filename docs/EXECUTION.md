@@ -1,7 +1,8 @@
 # Add-on execution
 
-This repository starts inactive and stock-safe. Implement only the smallest
-observed Productive Bees rendering defect before staging.
+This repository fails closed unless the exact Productive Bees artifact and
+audited BlueMap ABI are present. The current staging scope is the Feeding Slab
+body and honey fluid geometry.
 
 ## Prototype
 
