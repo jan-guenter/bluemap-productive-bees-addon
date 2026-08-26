@@ -1,2 +1,7 @@
 case_id	label	x	y	z	block_state	expected
-stock-control	stone stock rendering control	176	100	175	minecraft:stone	stock-visible
+oak-slab-control	oak slab stock control	160	100	161	minecraft:oak_slab[type=bottom,waterlogged=false]	stock oak bottom slab
+feeder-default-bottom	default smooth-stone feeding slab	163	100	161	productivebees:feeder[facing=south,type=bottom,waterlogged=false,honeylogged=false]	smooth-stone bottom slab
+feeder-oak-bottom	oak feeding slab bottom	166	100	161	productivebees:feeder[facing=south,type=bottom,waterlogged=false,honeylogged=false]	oak bottom slab
+feeder-oak-top	oak feeding slab top	169	100	161	productivebees:feeder[facing=south,type=top,waterlogged=false,honeylogged=false]	oak top slab
+feeder-oak-double	oak double feeding slab	172	100	161	productivebees:feeder[facing=south,type=double,waterlogged=false,honeylogged=false]	oak full block
+honey-source	honey source feeding a bounded trough	160	100	165	productivebees:honey[level=0]	golden source and naturally descending flow

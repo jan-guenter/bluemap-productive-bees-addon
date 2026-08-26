@@ -1,7 +1,8 @@
 # Add-on execution
 
-This repository starts inactive and stock-safe. Implement only the smallest
-observed Productive Bees rendering defect before staging.
+This repository fails closed unless the exact Productive Bees artifact and
+audited BlueMap ABI are present. The current staging scope is the Feeding Slab
+body and honey fluid geometry.
 
 ## Prototype
 
@@ -39,8 +40,8 @@ Record `visual_acceptance: true` under `owner_accepted_staging`, and record the
 production JAR, sources JAR, POM and Gradle module file names, sizes and hashes
 under `final_release_artifacts`.
 
-Promote `addon_version` through a pull request, remove every
-`SCAFFOLD_NOT_IMPLEMENTED` marker, and run with all exact candidate properties:
+Promote `addon_version` through a pull request, remove every unresolved
+scaffold marker, and run with all exact candidate properties:
 
 ```bash
 gradle --no-daemon -PbluemapSourcePath=../bluemap-backport \
