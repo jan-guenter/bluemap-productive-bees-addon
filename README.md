@@ -3,7 +3,7 @@
 A Java 21 BlueMap add-on for the exact `productivebees-1.21.1-13.13.5` profile in All the Mons
 `1.2.0` / Minecraft `1.21.1`.
 
-Status: staging prototype. It restores the Feeding Slab's client-rendered slab
+Status: owner-accepted `0.1.0-alpha.1` release candidate. It restores the Feeding Slab's client-rendered slab
 body, including its saved material and bottom/top/double form, and routes the
 Productive Bees honey block through BlueMap's native liquid renderer with the
 exact installed textures and fixed client tint.

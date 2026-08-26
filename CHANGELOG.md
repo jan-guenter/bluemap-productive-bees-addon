@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 0.1.0-alpha.1 - 2026-08-27
 
 - Added exact-artifact-gated Feeding Slab rendering for saved slab materials
   and bottom, top, and double forms.
