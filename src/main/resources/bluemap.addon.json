@@ -1,0 +1,6 @@
+{
+  "id": "bluemap-productivebees",
+  "entrypoint": "io.github.janguenter.bluemap.productivebees.BlueMapProductiveBeesAddon",
+  "dependencies": [],
+  "soft-dependencies": []
+}

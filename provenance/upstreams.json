@@ -1,0 +1,37 @@
+{
+  "artifacts": [
+    {
+      "curseforge_file": 8022994,
+      "curseforge_project": 377897,
+      "download_url": "https://www.curseforge.com/api/v1/mods/377897/files/8022994/download",
+      "evidence": "All the Mons 1.2.0 exact manifest association and SHA-1-correlated staging runtime artifact",
+      "evidence_tier": "T2_ARTIFACT_EXACT",
+      "file_name": "productivebees-1.21.1-13.13.5.jar",
+      "key": "productiveBees",
+      "license": "All Rights Reserved",
+      "mod_id": "productivebees",
+      "redistributed": false,
+      "sha1": "31f7bb1567fdbb508db133f5b094d5d0d293030d",
+      "sha256": "9d48d198bc6eacf3b7729f4d60b91e661cfa15d105264ba225dee87b1d547ba1",
+      "size": 5216551,
+      "version": "1.21.1-13.13.5"
+    }
+  ],
+  "bluemap": {
+    "api_commit": "285c9a60eff3ac2b0cab308ce1058d1565be0971",
+    "commit": "9be321df995a1103808621d529eb72773e719d4d",
+    "license": "MIT",
+    "redistributed": false,
+    "version": "5.22-agent.backport-5.22-mc1.21.1-2"
+  },
+  "pack": {
+    "commit": "c7bb230f21d14d26859d0b92548f089b3a493ad9",
+    "minecraft": "1.21.1",
+    "name": "All the Mons",
+    "neoforge": "21.1.248",
+    "version": "1.2.0"
+  },
+  "profile": "productivebees-1.21.1-13.13.5",
+  "schema": 1,
+  "source_use": "Runtime interfaces and installed resources may be interpreted only after family-specific evidence is recorded; no candidate classes, assets, binaries, source, or captured meshes are packaged."
+}
