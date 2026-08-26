@@ -2,7 +2,7 @@
   "variants": {
     "": {
       "model": "bluemap_productivebees:block/honey",
-      "renderer": "bluemap:liquid"
+      "renderer": "bluemap_productivebees:feeder"
     }
   }
 }

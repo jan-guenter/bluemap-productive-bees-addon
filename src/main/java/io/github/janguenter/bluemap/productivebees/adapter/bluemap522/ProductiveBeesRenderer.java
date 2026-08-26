@@ -24,7 +24,12 @@ import java.util.Map;
 final class ProductiveBeesRenderer implements BlockRenderer {
 
     private static final String FEEDER = "productivebees:feeder";
+    private static final String HONEY = "productivebees:honey";
+    private static final String SYNTHETIC_HONEY = "bluemap_productivebees:honey";
     private static final String DEFAULT_SLAB = "minecraft:smooth_stone_slab";
+    private static final float HONEY_RED = 1F;
+    private static final float HONEY_GREEN = 201F / 255F;
+    private static final float HONEY_BLUE = 22F / 255F;
     private static final ThreadLocal<Boolean> STOCK_FALLBACK =
             ThreadLocal.withInitial(() -> Boolean.FALSE);
 
@@ -34,6 +39,7 @@ final class ProductiveBeesRenderer implements BlockRenderer {
     private final AddonRuntime runtime;
     private final VariantRendererCatalog catalog;
     private final ResourceModelRenderer models;
+    private final BlockRenderer liquid;
     private final Map<BlockRendererType, BlockRenderer> hosts = new IdentityHashMap<>();
 
     ProductiveBeesRenderer(
@@ -49,6 +55,7 @@ final class ProductiveBeesRenderer implements BlockRenderer {
         this.runtime = runtime;
         this.catalog = catalog;
         this.models = new ResourceModelRenderer(resourcePack, textures, settings);
+        this.liquid = BlockRendererType.LIQUID.create(resourcePack, textures, settings);
     }
 
     @Override
@@ -60,9 +67,13 @@ final class ProductiveBeesRenderer implements BlockRenderer {
     ) {
         int safeStart = target.getTileModel().size();
         try {
-            if (runtime.active() && FEEDER.equals(
-                    block.getBlockState().getId().getFormatted())) {
-                if (renderFeeder(block, target, mapColor)) {
+            String blockId = block.getBlockState().getId().getFormatted();
+            if (runtime.active()) {
+                if (FEEDER.equals(blockId) && renderFeeder(block, target, mapColor)) {
+                    return;
+                }
+                if (HONEY.equals(blockId) || SYNTHETIC_HONEY.equals(blockId)) {
+                    renderHoney(block, variant, target, mapColor);
                     return;
                 }
             }
@@ -72,6 +83,22 @@ final class ProductiveBeesRenderer implements BlockRenderer {
         } catch (RuntimeException exception) {
             target.getTileModel().reset(safeStart);
             stockSafely(block, variant, target, mapColor, safeStart);
+        }
+    }
+
+    private void renderHoney(
+            BlockNeighborhood block,
+            Variant variant,
+            TileModelView target,
+            Color mapColor
+    ) {
+        int start = target.getTileModel().size();
+        liquid.render(block, variant, target, mapColor);
+        int end = target.getTileModel().size();
+        for (int face = start; face < end; face++) {
+            target.getTileModel().setColor(
+                    face, HONEY_RED, HONEY_GREEN, HONEY_BLUE
+            );
         }
     }
 
