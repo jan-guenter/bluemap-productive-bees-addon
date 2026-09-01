@@ -33,23 +33,23 @@
   "candidate_artifacts": {
     "production_jar": {
       "file_name": "bluemap-productive-bees-addon-0.1.0-alpha.2.jar",
-      "size": 0,
-      "sha256": "PENDING"
+      "size": 71436,
+      "sha256": "44b87a5ccfee0766022a9a4c700d13103264ead4f412a759841cb9c40f270385"
     },
     "sources_jar": {
       "file_name": "bluemap-productive-bees-addon-0.1.0-alpha.2-sources.jar",
-      "size": 0,
-      "sha256": "PENDING"
+      "size": 52308,
+      "sha256": "34d6bbe05a7bbcbee4e90127d76ae6ca0ca902115f9b5672b81dddcdc7e26e11"
     },
     "pom": {
       "file_name": "bluemap-productive-bees-addon-0.1.0-alpha.2.pom",
-      "size": 0,
-      "sha256": "PENDING"
+      "size": 1365,
+      "sha256": "451e65c6d7e7952fd742f9580ab1abd76a41d26b11962e44d80b09bbfce7b86e"
     },
     "gradle_module": {
       "file_name": "bluemap-productive-bees-addon-0.1.0-alpha.2.module.json",
-      "size": 0,
-      "sha256": "PENDING"
+      "size": 2873,
+      "sha256": "c021458ecdc322e9a8e2e79e089143b6432c09cf88fafce2f3d520d1d2103d4a"
     }
   },
   "gallery_candidate": {
@@ -80,7 +80,7 @@
     "adapter_api_gitlink_and_source_tree_gate": true,
     "production_archive_boundary_gate": true,
     "sources_archive_boundary_gate": true,
-    "local_candidate_artifact_identity_gate": false,
+    "local_candidate_artifact_identity_gate": true,
     "authoritative_pr_ci_reproduction": false,
     "exact_alpha_2_runtime_review": false
   }
