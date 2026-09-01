@@ -1,75 +1,136 @@
 {
   "schema_version": 1,
   "status": "owner-accepted-release-candidate",
-  "version": "0.1.0-alpha.1",
-  "release_date": "2026-08-27",
+  "published": false,
+  "version": "0.1.0-alpha.2",
+  "release_date": "2026-09-01",
   "repository": "https://github.com/jan-guenter/bluemap-productive-bees-addon",
-  "tag": "v0.1.0-alpha.1",
-  "maven_coordinate": "io.github.jan-guenter:bluemap-productive-bees-addon:0.1.0-alpha.1",
-  "owner_accepted_staging": {
-    "accepted_at": "2026-08-27",
-    "commit": "1c1dd6fa6b3aeeacac62acfd83c89d14d3445f92",
-    "tree": "295b314ae75caa2226a1e922013cc1d3834a3366",
-    "production_jar_size": 66287,
-    "production_jar_sha256": "5b20c01bf449ff0c9a7f176b9713a0127bf226786a0328d72b2683814163c728",
-    "accepted_at_map": "productivebees_review",
-    "visual_acceptance": true
+  "tag": "v0.1.0-alpha.2",
+  "maven_coordinate": "io.github.jan-guenter:bluemap-productive-bees-addon:0.1.0-alpha.2",
+  "bluemap": {
+    "version": "5.22-feature.backport-5.23-stateless-java-web-server-46",
+    "commit": "7e07f4e74ec1e92a6ead9aa1e66054af3e133aac",
+    "api_commit": "285c9a60eff3ac2b0cab308ce1058d1565be0971"
   },
-  "accepted_staging_entries": {
-    "path": "provenance/accepted-staging-entries.sha256",
-    "entry_count": 25,
-    "sha256": "ac70e8eda52453ecf7ac5cf22ab0773a4c992180a8a21f14bff6da17d3c66d33"
+  "adapter_api": {
+    "version": "0.1.0-alpha.2",
+    "commit": "e81f08bc4bfbf02d810ec8949a019130e2e61634",
+    "source_tree": "2f974c9bb2ba13888d69682f86f30f58922d30eb",
+    "source_files_compiled": 4,
+    "module_jar_installed": false,
+    "module_jar_bundled": false,
+    "module_jar_nested": false,
+    "local_adapter_package": "io.github.janguenter.bluemap.productivebees.adapter.bluemap523"
   },
-  "final_release_artifacts": {
+  "baseline_release": {
+    "version": "0.1.0-alpha.1",
+    "tag": "v0.1.0-alpha.1",
+    "commit": "c2fb4e93bd765bbe2e4ffb151764ae7431db9695",
+    "production_jar_size": 66286,
+    "production_jar_sha256": "17643a965eaf55d5746ec74bd39df153762ac03aaddcd4f47005d9b9f683b1dc",
+    "owner_visual_acceptance": "2026-08-27"
+  },
+  "candidate_artifacts": {
     "production_jar": {
-      "file_name": "bluemap-productive-bees-addon-0.1.0-alpha.1.jar",
-      "size": 66286,
-      "sha256": "17643a965eaf55d5746ec74bd39df153762ac03aaddcd4f47005d9b9f683b1dc"
+      "file_name": "bluemap-productive-bees-addon-0.1.0-alpha.2.jar",
+      "size": 71436,
+      "sha256": "44b87a5ccfee0766022a9a4c700d13103264ead4f412a759841cb9c40f270385"
     },
     "sources_jar": {
-      "file_name": "bluemap-productive-bees-addon-0.1.0-alpha.1-sources.jar",
-      "size": 47109,
-      "sha256": "46bcac248a86ec7a12f5c9e3d8f50a885cb650ee5edc2376ff0d9545fb0d2dc8"
+      "file_name": "bluemap-productive-bees-addon-0.1.0-alpha.2-sources.jar",
+      "size": 52308,
+      "sha256": "34d6bbe05a7bbcbee4e90127d76ae6ca0ca902115f9b5672b81dddcdc7e26e11"
     },
     "pom": {
-      "file_name": "bluemap-productive-bees-addon-0.1.0-alpha.1.pom",
+      "file_name": "bluemap-productive-bees-addon-0.1.0-alpha.2.pom",
       "size": 1365,
-      "sha256": "0f55679ffbbc7b675baf3b5b6a4d3ae680a7194408d0e5d8ba5057f9bb3e7add"
+      "sha256": "451e65c6d7e7952fd742f9580ab1abd76a41d26b11962e44d80b09bbfce7b86e"
     },
     "gradle_module": {
-      "file_name": "bluemap-productive-bees-addon-0.1.0-alpha.1.module.json",
+      "file_name": "bluemap-productive-bees-addon-0.1.0-alpha.2.module.json",
       "size": 2873,
-      "sha256": "5a571c352a7749c43f5d270f47a40cf090f82533feb55ab426c82dcc56651ddf"
+      "sha256": "c021458ecdc322e9a8e2e79e089143b6432c09cf88fafce2f3d520d1d2103d4a"
     }
   },
-  "staged_equivalence": {
-    "entry_manifest": "provenance/accepted-staging-entries.sha256",
-    "identical_non_manifest_entries": 25,
-    "whole_jar_byte_identical": false,
-    "only_changed_entry_bytes": "META-INF/MANIFEST.MF",
-    "change_reason": "Implementation-Version changed from the accepted SNAPSHOT marker to the final release version."
-  },
-  "gallery": {
-    "archive_file_name": "productivebees-gallery.zip",
+  "gallery_candidate": {
+    "file_name": "productivebees-gallery.zip",
     "size": 2344,
     "sha256": "68bc274ab1e7e8537f1a0577352d9abf0bf12b5d1cf71486504fdc2779bcbe6c",
-    "review_cases": 6,
-    "published_as_release_asset": false
+    "deterministic_rebuild": true,
+    "matches_alpha_1_owner_accepted_gallery": true
+  },
+  "preserved_contract": {
+    "feeding_slab_forms": 3,
+    "honey_fluid_route": true,
+    "gallery_cases": 6,
+    "gallery_sources_changed": false,
+    "exact_mod_profile_changed": false,
+    "renderer_behavior_changed": false,
+    "stock_fallback_changed": false
   },
   "ephemeral_ci_inputs": {
     "productiveBees": {
-      "curseforge_project": 377897,
-      "curseforge_file": 8022994,
+      "file_name": "productivebees-1.21.1-13.13.5.jar",
       "size": 5216551,
       "sha256": "9d48d198bc6eacf3b7729f4d60b91e661cfa15d105264ba225dee87b1d547ba1"
-    },
-    "policy": "Downloaded only into the ephemeral runner, verified before use, and never bundled or uploaded."
+    }
   },
   "verification": {
-    "production_jar_exact_byte_gate": true,
-    "sources_jar_exact_byte_gate": true,
-    "publication_metadata_exact_byte_gate": true,
-    "staged_equivalence_gate": true,
-    "exact_input_gate": true
+    "exact_input_gate": true,
+    "adapter_api_gitlink_and_source_tree_gate": true,
+    "production_archive_boundary_gate": true,
+    "sources_archive_boundary_gate": true,
+    "local_candidate_artifact_identity_gate": true,
+    "authoritative_pr_ci_reproduction": true,
+    "local_gradle_version": "9.6.1",
+    "local_java_runtime": "21.0.12.1+1",
+    "exact_alpha_2_runtime_review": true
+  },
+  "owner_accepted_staging": {
+    "visual_acceptance": true,
+    "accepted_on": "2026-09-02",
+    "scope": "Owner accepted the Productive Bees gallery in the combined 51-add-on BlueMap 5.23 integration review. The accepted renderer, profile, textures, and gallery are the alpha.2 candidate bytes; the aggregate staging JAR differs only at the integration entrypoint overlay.",
+    "integration_run": "bluemap-atmons-integration-20260901-next-review-batch-v39",
+    "candidate_manifest": {
+      "sha256": "3ddf4c4989bf2eca1b3207f32428c67343d82a32e21002c3767b14d765808f55",
+      "local_candidate_base_source_commit": "936e3e1cd51579559e56be8552e6d1bd5a5e0b84",
+      "local_candidate_base_artifact": {
+        "file_name": "bluemap-productive-bees-addon-0.1.0-alpha.2.jar",
+        "size": 71436,
+        "sha256": "44b87a5ccfee0766022a9a4c700d13103264ead4f412a759841cb9c40f270385"
+      },
+      "aggregate_staging_artifact": {
+        "file_name": "bluemap-productive-bees-addon-0.1.0-alpha.1.jar",
+        "size": 71806,
+        "sha256": "8184b89babc5f4147823b08ce5bc09c8a5bd1a6144f2ac8647884e3abf5b25ac"
+      }
+    },
+    "browser_capture": {
+      "file_name": "v39-productive-bees-sanity-20260901.png",
+      "size": 683582,
+      "sha256": "eec27bb8fdf288bf1e703e7de361a09cbc4b71915d226266175cc0180d91fc23"
+    }
+  },
+  "final_release_artifacts": {
+    "production_jar": {
+      "file_name": "bluemap-productive-bees-addon-0.1.0-alpha.2.jar",
+      "size": 71436,
+      "sha256": "44b87a5ccfee0766022a9a4c700d13103264ead4f412a759841cb9c40f270385"
+    },
+    "sources_jar": {
+      "file_name": "bluemap-productive-bees-addon-0.1.0-alpha.2-sources.jar",
+      "size": 52308,
+      "sha256": "34d6bbe05a7bbcbee4e90127d76ae6ca0ca902115f9b5672b81dddcdc7e26e11"
+    },
+    "pom": {
+      "file_name": "bluemap-productive-bees-addon-0.1.0-alpha.2.pom",
+      "size": 1365,
+      "sha256": "451e65c6d7e7952fd742f9580ab1abd76a41d26b11962e44d80b09bbfce7b86e"
+    },
+    "gradle_module": {
+      "file_name": "bluemap-productive-bees-addon-0.1.0-alpha.2.module.json",
+      "size": 2873,
+      "sha256": "c021458ecdc322e9a8e2e79e089143b6432c09cf88fafce2f3d520d1d2103d4a"
+    }
   }
 }
